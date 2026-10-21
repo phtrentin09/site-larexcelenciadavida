@@ -96,12 +96,12 @@
   document.querySelectorAll("[data-cookies]").forEach(function(b){
     b.addEventListener("click", function(){
       var v = b.getAttribute("data-cookies"); guarda(CHAVE, v);
-      if(aviso) aviso.hidden = true;
+      if(aviso){ aviso.hidden = true; aviso.remove(); }
       if(v === "aceito") carregaMapas();
     });
   });
   document.querySelectorAll("[data-ver-mapa]").forEach(function(b){
-    b.addEventListener("click", function(){ guarda(CHAVE, "aceito"); if(aviso) aviso.hidden = true; carregaMapas(); });
+    b.addEventListener("click", function(){ guarda(CHAVE, "aceito"); if(aviso){ aviso.hidden = true; aviso.remove(); } carregaMapas(); });
   });
 
   // Formulários viram mensagem no WhatsApp
